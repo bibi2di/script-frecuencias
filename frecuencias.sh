@@ -52,15 +52,16 @@ fi
 
 filename="$1"
 
-#Creamos un archivo de resultado para que todas las modificaciones se guarden en el susodicho
-touch resultado.txt
-cat $filename > resultado.txt
-
 #Verificación: existe el archivo
 if [ ! -f "$filename" ]; then
 	echo "El archivo que me has pasado no existe. Agur"
 	exit 1
 fi
+
+#Creamos un archivo de resultado para que todas las modificaciones se guarden en el susodicho
+touch resultado.txt
+cat $filename > resultado.txt
+
 
 #MENÚ
 
