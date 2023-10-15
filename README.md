@@ -18,6 +18,8 @@ En la terminal de comandos (situado en el directorio donde se encuentra el ejecu
 
 ```console
 tunombre@tuordenata:~$ ./frecuencias.sh nombre_del_archivo_que_quieres_descifrar.txt
+```
+```console
 MENÚ!
 1 - Frecuencia de palabras
 2 - Frecuencia de las letras
