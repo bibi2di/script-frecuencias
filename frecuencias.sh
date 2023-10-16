@@ -25,21 +25,14 @@ cat $filename | tr -cd '[:alpha:]' | grep -o . | sort | uniq -c | sort -nr
 
 ##### 3 #####
 
-function sustPalabras(){
-	read -p "PALABRA QUE QUIERES REEMPLAZAR (MAYUS): " palabra1
-	read -p "palabra nueva (minus): " palabra2
+function sustituir(){
+	read -p "PALABRA/LETRA QUE QUIERES REEMPLAZAR (MAYUS): " palabra1
+	read -p "palabra/letra nueva (minus): " palabra2
 	sed -i "s/$palabra1/$palabra2/g" resultado.txt
 
 }
 
 ##### 4 #####
-
-function sustLetras(){
-	read -p "LETRA QUE QUIERES REEMPLAZAR (MAYUS): " letra1
-	read -p "letra nueva (minus): " letra2
-	sed -i "s/$letra1/$letra2/g" resultado.txt
-}
-##### 5 #####
 
 function salir(){
 	exit 0
@@ -67,22 +60,21 @@ cat $filename > resultado.txt
 
 opcion=0
 
-while test $opcion -ne 5
+while test $opcion -ne 4
 do
 
+echo -e ""
 echo -e "MENÚ!"
 echo -e "1 - Frecuencia de palabras"
 echo -e "2 - Frecuencia de las letras"
-echo -e "3 - Sustituir palabras"
-echo -e "4 - Sustituir letras"
-echo -e "5 - Salir"
+echo -e "3 - Realizar sustitucion"
+echo -e "4 - Salir"
 read -p "Elige una opción: " opcion
 echo ""
 	case $opcion in
 	1) freqPalabras;;
 	2) freqLetras;;
-	3) sustPalabras;;
-	4) sustLetras;;
+	3) sustituir;;
 	*) salir;;
 	esac
 done
